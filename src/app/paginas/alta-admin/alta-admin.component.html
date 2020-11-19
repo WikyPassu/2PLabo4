@@ -1,1 +1,13 @@
-<p>alta-admin works!</p>
+<app-card-email></app-card-email>
+<br>
+<app-form-alta-admin (nuevaAltaAdmin)="registrarAdmin($event)"></app-form-alta-admin>
+<div align="center">
+    <mat-card class="error" *ngIf="hayError">
+        <mat-label><strong>{{mensaje}}</strong></mat-label>
+    </mat-card>
+    <mat-card class="exito" *ngIf="exito">
+        <mat-label><strong>{{mensaje}}</strong></mat-label>
+    </mat-card>
+</div>
+<br>
+<app-spinner *ngIf="spinner"></app-spinner>

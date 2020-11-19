@@ -36,6 +36,8 @@ import { ListadoMateriasComponent } from './paginas/listado-materias/listado-mat
 import { ListadoUsuariosComponent } from './paginas/listado-usuarios/listado-usuarios.component';
 import { FormRegistroComponent } from './components/form-registro/form-registro.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
+import { CardEmailComponent } from "./components/card-email/card-email.component";
+import { FormAltaAdminComponent } from './components/form-alta-admin/form-alta-admin.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { FormLoginComponent } from './components/form-login/form-login.component
     NotFoundComponent,
     ToolbarComponent,
     CardComponent,
+    CardEmailComponent,
     IniciarSesionComponent,
     RegistrarseComponent,
     CerrarSesionComponent,
@@ -55,6 +58,7 @@ import { FormLoginComponent } from './components/form-login/form-login.component
     ListadoUsuariosComponent,
     FormRegistroComponent,
     FormLoginComponent,
+    FormAltaAdminComponent,
   ],
   imports: [
     FormsModule,

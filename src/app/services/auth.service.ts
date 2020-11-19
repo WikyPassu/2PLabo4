@@ -69,7 +69,7 @@ export class AuthService {
       .then(user => {
         this.obtenerUsuario(email).subscribe(doc => {
           if(doc != null){
-            this.usuario = doc;
+            this.usuario = doc[0];
             if(this.usuario.tipo == "admin"){
               this.menu.changeItemStatus(0, true);
               this.menu.changeItemStatus(1, true);
@@ -213,76 +213,5 @@ export class AuthService {
       console.log(error);
     });
     return logged;
-  }
-
-  registrarMascota(animal: string, raza: string, nombre: string, edad: number, email: string = this.getCurrentUser()){
-    let fecha: number = Date.now();
-    let idMascota: string = fecha + "." + nombre;
-    return this.db.collection("mascotas").doc(idMascota).set({
-      animal: animal,
-      raza: raza,
-      nombre: nombre,
-      edad: edad,
-      email: email,
-      fecha: fecha
-    });
-  }
-
-  traerTodasLasMascotas(){
-    return this.db.collection("mascotas").valueChanges();
-  }
-
-  traerMascotasCliente(email: string){
-    return this.db.collection("mascotas", ref => ref.where("email", "==", email)).valueChanges();
-  }
-
-  traerUnaMascota(id: string){
-    return this.db.collection("mascotas").doc(id).get();
-  }
-
-  modificarMascota(id: string, animal: string, raza: string, nombre: string, edad: number, email: string){
-    return this.db.collection("mascotas").doc(id).update({
-      "animal": animal,
-      "raza": raza,
-      "nombre": nombre,
-      "edad": edad,
-      "email": email
-    });
-  }
-
-  pedirTurno(animal: string, nombre: string, turno: string){
-    let fecha = Date.now();
-    let id = fecha + "." + this.getCurrentUser();
-    return this.db.collection("turnos").doc(id).set({
-      id: id,
-      cliente: this.getCurrentUser(),
-      animal: animal,
-      nombre: nombre,
-      fechaTurno: turno,
-      fechaPedido: fecha
-    });
-  }
-
-  traerTurnos(){
-    return this.db.collection("turnos").valueChanges();
-  }
-
-  traerUsuariosPorTipo(tipo: string){
-    return this.db.collection("users", ref => ref.where("tipo", "==", tipo)).valueChanges();
-  }
-
-  public guardarMensaje(mensaje:string){
-    let fecha = Date.now();
-    let id = fecha + "." + this.getCurrentUser();
-    return this.db.collection("mensajes").doc(id).set({
-      id: id,
-      usuario: this.getCurrentUser(),
-      mensaje: mensaje,
-      milisegundos: fecha
-    });
-  }
-
-  public traerMensajes(){
-    return this.db.collection("mensajes", ref => ref.orderBy("milisegundos")).valueChanges();
   }
 }
