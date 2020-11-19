@@ -102,28 +102,28 @@ export class AuthService {
           tipo: tipo,
           fecha: fecha
         });
-        if(tipo == "admin"){
-          this.menu.changeItemStatus(0, true);
-          this.menu.changeItemStatus(1, true);
-          this.menu.changeItemStatus(2, true);
-          this.menu.changeItemStatus(3, true);
-          this.menu.changeItemStatus(4, false);
-          this.menu.changeItemStatus(5, true);
-          this.menu.changeItemStatus(6, false);
-          this.menu.changeItemStatus(7, false);
-          this.menu.changeItemStatus(8, true);
-        }
-        else if(tipo == "cliente"){
-          this.menu.changeItemStatus(0, true);
-          this.menu.changeItemStatus(1, true);
-          this.menu.changeItemStatus(2, true);
-          this.menu.changeItemStatus(3, false);
-          this.menu.changeItemStatus(4, true);
-          this.menu.changeItemStatus(5, true);
-          this.menu.changeItemStatus(6, false);
-          this.menu.changeItemStatus(7, false);
-          this.menu.changeItemStatus(8, true);
-        }
+        // if(tipo == "admin"){
+        //   this.menu.changeItemStatus(0, true);
+        //   this.menu.changeItemStatus(1, true);
+        //   this.menu.changeItemStatus(2, true);
+        //   this.menu.changeItemStatus(3, true);
+        //   this.menu.changeItemStatus(4, false);
+        //   this.menu.changeItemStatus(5, true);
+        //   this.menu.changeItemStatus(6, false);
+        //   this.menu.changeItemStatus(7, false);
+        //   this.menu.changeItemStatus(8, true);
+        // }
+        // else if(tipo == "alumno"){
+        //   this.menu.changeItemStatus(0, true);
+        //   this.menu.changeItemStatus(1, true);
+        //   this.menu.changeItemStatus(2, true);
+        //   this.menu.changeItemStatus(3, false);
+        //   this.menu.changeItemStatus(4, true);
+        //   this.menu.changeItemStatus(5, true);
+        //   this.menu.changeItemStatus(6, false);
+        //   this.menu.changeItemStatus(7, false);
+        //   this.menu.changeItemStatus(8, true);
+        // }
         resolve(user);
       })
       .catch(error => rejected(error));

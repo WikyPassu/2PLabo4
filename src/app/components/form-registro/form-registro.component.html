@@ -26,14 +26,7 @@
         <mat-radio-button [checked]="true" value="alumno">Alumno</mat-radio-button>
         <mat-radio-button value="profesor">Profesor</mat-radio-button>
     </mat-radio-group>
-    <!-- <br><br>
-    <mat-card class="error" *ngIf="hayError">
-        <mat-label><strong>{{mensaje}}</strong></mat-label>
-    </mat-card>
-    <mat-card class="error" *ngIf="exito">
-        <mat-label><strong>{{mensaje}}</strong></mat-label>
-    </mat-card> -->
-    <br>
-    <button mat-raised-button color="primary" (click)="emitirNuevoRegister()" [disabled]="!usuario.valid">Enviar</button>
+    <br><br><br>
+    <button mat-raised-button color="primary" (click)="emitirNuevoRegistro()" [disabled]="!usuario.valid">Enviar</button>
     <br><br>
 </div>
