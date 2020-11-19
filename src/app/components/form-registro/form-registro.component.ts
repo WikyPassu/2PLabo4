@@ -21,7 +21,7 @@ export class FormRegistroComponent implements OnInit {
       Validators.minLength(6)
     ]]
   });
-  tipo: string = "alumno";
+  tipo: string = "admin";
 
   constructor(private fb: FormBuilder) { }
 

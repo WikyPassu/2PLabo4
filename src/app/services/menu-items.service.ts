@@ -40,7 +40,7 @@ export class MenuItemsService {
     {
       texto: "Listado usuarios",
       icono: "",
-      ruta: "chat",
+      ruta: "listado-usuarios",
       activo: false
     },
     {
