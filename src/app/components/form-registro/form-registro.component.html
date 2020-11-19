@@ -1,0 +1,39 @@
+<div align="center">
+    <br>
+    <h1><b>Registrarse</b></h1>
+    <p>Crea una cuenta para poder empezar a usar las funciones del sistema de alumnos.</p>
+    <form [formGroup]="usuario">
+        <mat-form-field class="example-full-width">
+            <mat-label>Correo</mat-label>
+            <input type="email"
+                matInput
+                placeholder="Correo electrónico"
+                formControlName="email">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Clave</mat-label>
+            <input type="password"
+                matInput
+                placeholder="Clave"
+                formControlName="clave">
+        </mat-form-field>
+    </form>
+    <br>
+    <mat-radio-group color="primary" (change)="onChange($event)">
+        <mat-label>Tipo de usuario:</mat-label>
+        <br><br>
+        <mat-radio-button [checked]="true" value="alumno">Alumno</mat-radio-button>
+        <mat-radio-button value="profesor">Profesor</mat-radio-button>
+    </mat-radio-group>
+    <!-- <br><br>
+    <mat-card class="error" *ngIf="hayError">
+        <mat-label><strong>{{mensaje}}</strong></mat-label>
+    </mat-card>
+    <mat-card class="error" *ngIf="exito">
+        <mat-label><strong>{{mensaje}}</strong></mat-label>
+    </mat-card> -->
+    <br>
+    <button mat-raised-button color="primary" (click)="emitirNuevoRegister()" [disabled]="!usuario.valid">Enviar</button>
+    <br><br>
+</div>

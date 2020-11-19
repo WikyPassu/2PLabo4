@@ -1,0 +1,13 @@
+::ng-deep .error{
+    width: 40%;
+    background-color: red;
+}
+
+::ng-deep .registro{
+    width: 40%;
+    background-color: rgb(5, 221, 34);
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+}

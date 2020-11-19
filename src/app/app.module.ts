@@ -23,19 +23,18 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 
 import { CardComponent } from './components/card/card.component';
-import { HomeComponent } from './components/paginas/home/home.component';
-import { NotFoundComponent } from './components/paginas/not-found/not-found.component';
-import { IniciarSesionComponent } from './components/paginas/iniciar-sesion/iniciar-sesion.component';
-import { RegistrarseComponent } from './components/paginas/registrarse/registrarse.component';
-import { CerrarSesionComponent } from './components/paginas/cerrar-sesion/cerrar-sesion.component';
+import { HomeComponent } from './paginas/home/home.component';
+import { NotFoundComponent } from './paginas/not-found/not-found.component';
+import { IniciarSesionComponent } from './paginas/iniciar-sesion/iniciar-sesion.component';
+import { RegistrarseComponent } from './paginas/registrarse/registrarse.component';
+import { CerrarSesionComponent } from './paginas/cerrar-sesion/cerrar-sesion.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-import { AltaMascotaComponent } from './components/paginas/alta-mascota/alta-mascota.component';
-import { ListadoMascotasComponent } from './components/paginas/listado-mascotas/listado-mascotas.component';
-import { ListadoTurnosComponent } from './components/paginas/listado-turnos/listado-turnos.component';
-import { ChatComponent } from './components/paginas/chat/chat.component';
-import { PedirTurnoComponent } from './components/paginas/pedir-turno/pedir-turno.component';
-import { CardEmailComponent } from './components/card-email/card-email.component';
-import { ModificarMascotaComponent } from './components/paginas/modificar-mascota/modificar-mascota.component';
+import { AltaAdminComponent } from './paginas/alta-admin/alta-admin.component';
+import { AltaMateriaComponent } from './paginas/alta-materia/alta-materia.component';
+import { InscripcionMateriaComponent } from './paginas/inscripcion-materia/inscripcion-materia.component';
+import { ListadoMateriasComponent } from './paginas/listado-materias/listado-materias.component';
+import { ListadoUsuariosComponent } from './paginas/listado-usuarios/listado-usuarios.component';
+import { FormRegistroComponent } from './components/form-registro/form-registro.component';
 
 @NgModule({
   declarations: [
@@ -48,13 +47,12 @@ import { ModificarMascotaComponent } from './components/paginas/modificar-mascot
     RegistrarseComponent,
     CerrarSesionComponent,
     SpinnerComponent,
-    AltaMascotaComponent,
-    ListadoMascotasComponent,
-    ListadoTurnosComponent,
-    ChatComponent,
-    PedirTurnoComponent,
-    CardEmailComponent,
-    ModificarMascotaComponent,
+    AltaAdminComponent,
+    AltaMateriaComponent,
+    InscripcionMateriaComponent,
+    ListadoMateriasComponent,
+    ListadoUsuariosComponent,
+    FormRegistroComponent,
   ],
   imports: [
     FormsModule,

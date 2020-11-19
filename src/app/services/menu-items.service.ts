@@ -14,32 +14,32 @@ export class MenuItemsService {
       activo: false
     },
     {
-      texto: "Alta mascota",
-      icono: "pets",
-      ruta: "alta-mascota",
+      texto: "Alta administrador",
+      icono: "",
+      ruta: "alta-admin",
       activo: false
     },
     {
-      texto: "Listado mascotas",
-      icono: "view_list",
-      ruta: "listado-mascotas",
+      texto: "Alta materia",
+      icono: "",
+      ruta: "alta-materia",
       activo: false
     },
     {
-      texto: "Listado turnos",
-      icono: "assignment",
-      ruta: "listado-turnos",
+      texto: "Inscripción materia",
+      icono: "",
+      ruta: "inscripcion-materia",
       activo: false
     },
     {
-      texto: "Pedir turno",
-      icono: "assignment_turned_in",
-      ruta: "pedir-turno",
+      texto: "Listado materias",
+      icono: "",
+      ruta: "listado-materias",
       activo: false
     },
     {
-      texto: "Chat",
-      icono: "chat",
+      texto: "Listado usuarios",
+      icono: "",
       ruta: "chat",
       activo: false
     },
