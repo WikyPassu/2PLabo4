@@ -1,0 +1,62 @@
+<app-card-email></app-card-email>
+<div align="center" *ngIf="!hayMascota">
+    <br>
+    <h1><b>Página no encontrada :(</b></h1>
+</div>
+<div align="center" *ngIf="hayMascota">
+    <br>
+    <h1><b>Modificar mascota</b></h1>
+    <mat-radio-group color="primary" [value]="animal" (change)="onChange($event)">
+        <mat-label>Tipo de animal:</mat-label>
+        <br><br>
+        <mat-radio-button value="Perro">Perro</mat-radio-button>
+        <mat-radio-button value="Gato">Gato</mat-radio-button>
+        <mat-radio-button value="Hurón">Hurón</mat-radio-button>
+    </mat-radio-group>
+    <br><br>
+    <form [formGroup]="mascotaForm">
+        <mat-form-field class="example-full-width">
+            <mat-label>Raza</mat-label>
+            <input type="text"
+                matInput
+                placeholder="Raza"
+                formControlName="raza">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input type="text"
+                matInput
+                placeholder="Nombre"
+                formControlName="nombre">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Edad</mat-label>
+            <input type="number"
+                matInput
+                placeholder="Edad"
+                min="1"
+                max="20"
+                formControlName="edad">
+        </mat-form-field>
+        <br>
+        <mat-form-field *ngIf="mostrarCampoDuenio">
+            <mat-label>Dueño</mat-label>
+            <input type="email"
+                matInput
+                placeholder="Dueño"
+                formControlName="email">
+        </mat-form-field>
+    </form>
+    <mat-card class="error" *ngIf="hayError">
+        <mat-label><strong>{{mensaje}}</strong></mat-label>
+    </mat-card>
+    <mat-card class="exito" *ngIf="exito">
+        <mat-label><strong>{{mensaje}}</strong></mat-label>
+    </mat-card>
+    <br>
+    <button mat-raised-button color="primary" (click)="modificar()" [disabled]="!mascotaForm.valid">Modificar</button>
+    <br><br>
+</div>
+<app-spinner *ngIf="spinner"></app-spinner>

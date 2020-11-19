@@ -1,0 +1,33 @@
+<app-card-email></app-card-email>
+<br>
+<div align="center">
+    <h1><b>Chat</b></h1>
+    <div #scrollMe class="chat">
+        <div *ngFor="let mensaje of mensajes">
+            <mat-card *ngIf="mensaje.mio" class="mio">
+                <mat-label><b>{{mensaje.usuario}}</b></mat-label>
+                <br>
+                <mat-label>{{mensaje.mensaje}}</mat-label>
+            </mat-card>
+            <mat-card *ngIf="!mensaje.mio" class="otro">
+                <mat-label><b>{{mensaje.usuario}}</b></mat-label>
+                <br>
+                <mat-label>{{mensaje.mensaje}}</mat-label>
+            </mat-card>
+            <br>
+        </div>
+    </div>
+    <input type="text" [(ngModel)]="mensaje" name="mensaje">
+    <button id="enviar" (click)="enviarMensaje()">Enviar</button>
+    <!-- <br><br>
+    <h1><b>Contactos</b></h1>
+    <mat-card class="contactos">
+        <div *ngFor="let usuario of contactos">
+            <mat-card>
+                <mat-label>{{usuario.email}}</mat-label>
+            </mat-card>
+            <br>
+        </div>
+    </mat-card> -->
+</div>
+<br>

@@ -1,0 +1,31 @@
+<app-card-email></app-card-email>
+<div align="center" *ngIf="!datosListos">
+    <br>
+    <h1><b>No hay mascotas para mostrar...</b></h1>
+</div>
+<div align="center" *ngIf="datosListos">
+    <br>
+    <h1><b>Listado de mascotas</b></h1>
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Animal</th>
+            <th>Raza</th>
+            <th>Edad</th>
+            <!-- <th *ngIf="esAdmin">Modificar</th> -->
+            <th>Modificar</th>
+        </thead>
+        <tr *ngFor="let mascota of lista">
+            <td>{{mascota.nombre}}</td>
+            <td>{{mascota.animal}}</td>
+            <td>{{mascota.raza}}</td>
+            <td>{{mascota.edad}}</td>
+            <!-- <td *ngIf="esAdmin"> -->
+            <td>
+                <button mat-raised-button color="primary" (click)="irModificar(mascota.id)">Modificar</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<br>
+<app-spinner *ngIf="spinner"></app-spinner>

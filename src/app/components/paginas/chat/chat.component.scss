@@ -1,0 +1,28 @@
+::ng-deep .chat{
+    width: 80%;
+    height: 50vh;
+    background-color: rgb(243, 231, 255);
+    border: blueviolet 5px solid;
+    overflow-x: auto;
+}
+
+::ng-deep .contactos{
+    width: 80%;
+    height: auto;
+    background-color: rgb(219, 180, 255);
+}
+
+mat-label{
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.mio{
+    margin-left: 40%;
+    
+}
+
+.otro{
+    margin-right: 40%;
+    padding-left: 10px;
+}

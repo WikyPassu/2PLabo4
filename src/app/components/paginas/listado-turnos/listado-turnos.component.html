@@ -1,0 +1,25 @@
+<app-card-email></app-card-email>
+<div align="center" *ngIf="!datosListos">
+    <br>
+    <h1><b>No hay turnos para mostrar...</b></h1>
+</div>
+<div align="center" *ngIf="datosListos">
+    <br>
+    <h1><b>Listado de turnos</b></h1>
+    <table>
+        <thead>
+            <th>Cliente</th>
+            <th>Animal</th>
+            <th>Nombre</th>
+            <th>Fecha</th>
+        </thead>
+        <tr *ngFor="let turno of lista">
+            <td>{{turno.cliente}}</td>
+            <td>{{turno.animal}}</td>
+            <td>{{turno.nombre}}</td>
+            <td>{{turno.fechaTurno}}</td>
+        </tr>
+    </table>
+</div>
+<br>
+<app-spinner *ngIf="spinner"></app-spinner>

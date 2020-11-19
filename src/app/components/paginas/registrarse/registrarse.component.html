@@ -1,0 +1,40 @@
+<div align="center">
+    <br>
+    <h1><b>Registrarse</b></h1>
+    <p>Crear una cuenta para poder empezar a usar las funciones de la veterinaria.</p>
+    <form [formGroup]="credenciales">
+        <mat-form-field class="example-full-width">
+            <mat-label>Correo</mat-label>
+            <input type="email"
+                matInput
+                placeholder="Correo electrónico"
+                formControlName="email">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Clave</mat-label>
+            <input type="password"
+                matInput
+                placeholder="Clave"
+                formControlName="clave">
+        </mat-form-field>
+    </form>
+    <br>
+    <mat-radio-group color="primary" (change)="onChange($event)">
+        <mat-label>Tipo de usuario:</mat-label>
+        <br><br>
+        <mat-radio-button [checked]="true" value="cliente">Cliente</mat-radio-button>
+        <mat-radio-button value="admin">Administrador</mat-radio-button>
+    </mat-radio-group>
+    <br><br>
+    <mat-card class="error" *ngIf="hayError">
+        <mat-label><strong>{{mensaje}}</strong></mat-label>
+    </mat-card>
+    <mat-card class="registro" *ngIf="seRegistro">
+        <mat-label><strong>{{mensajeRegistro}}</strong></mat-label>
+    </mat-card>
+    <br>
+    <button mat-raised-button color="primary" (click)="register()" [disabled]="!credenciales.valid">Enviar</button>
+    <br><br>
+</div>
+<app-spinner *ngIf="spinner"></app-spinner>
