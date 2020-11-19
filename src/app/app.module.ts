@@ -38,6 +38,7 @@ import { FormRegistroComponent } from './components/form-registro/form-registro.
 import { FormLoginComponent } from './components/form-login/form-login.component';
 import { CardEmailComponent } from "./components/card-email/card-email.component";
 import { FormAltaAdminComponent } from './components/form-alta-admin/form-alta-admin.component';
+import { FormAltaMateriaComponent } from './components/form-alta-materia/form-alta-materia.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { FormAltaAdminComponent } from './components/form-alta-admin/form-alta-a
     FormRegistroComponent,
     FormLoginComponent,
     FormAltaAdminComponent,
+    FormAltaMateriaComponent,
   ],
   imports: [
     FormsModule,

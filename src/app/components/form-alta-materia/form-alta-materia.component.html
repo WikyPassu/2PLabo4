@@ -1,0 +1,48 @@
+<div align="center">
+    <br>
+    <h1><b>Alta de materia</b></h1>
+    <form [formGroup]="materia">
+        <mat-form-field class="example-full-width">
+            <mat-label>Nombre</mat-label>
+            <input type="text"
+                matInput
+                placeholder="Nombre materia"
+                formControlName="nombre">
+        </mat-form-field>
+        <br>
+        <mat-radio-group color="primary" (change)="onChange($event)">
+            <mat-label>Cuatrimestre:</mat-label>
+            <br><br>
+            <mat-radio-button [checked]="true" value="primero">Primero</mat-radio-button>
+            <mat-radio-button value="segundo">Segundo</mat-radio-button>
+        </mat-radio-group>
+        <br><br><br>
+        <mat-form-field class="example-full-width">
+            <mat-label>Cupo:</mat-label>
+            <input type="number"
+                matInput
+                placeholder="Cupo de alumnos"
+                formControlName="cupo">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+            <mat-label>Año:</mat-label>
+            <input type="number"
+                matInput
+                placeholder="Año"
+                formControlName="anio">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+            <mat-label>Profesor:</mat-label>
+            <input type="text"
+                matInput
+                placeholder="Nombre profesor"
+                formControlName="profesor">
+        </mat-form-field>
+        <br>
+    </form>
+    <br>
+    <button mat-raised-button color="primary" (click)="emitirAltaAdmin()" [disabled]="!usuario.valid">Enviar</button>
+    <br><br>
+</div>

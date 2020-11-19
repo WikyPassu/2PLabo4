@@ -1,2 +1,13 @@
 <app-card-email></app-card-email>
-<p>alta-materia works!</p>
+<br>
+<app-form-alta-materia (nuevaAltaMateria)="registrarMateria($event)"></app-form-alta-materia>
+<div align="center">
+    <mat-card class="error" *ngIf="hayError">
+        <mat-label><strong>{{mensaje}}</strong></mat-label>
+    </mat-card>
+    <mat-card class="exito" *ngIf="exito">
+        <mat-label><strong>{{mensaje}}</strong></mat-label>
+    </mat-card>
+</div>
+<br>
+<app-spinner *ngIf="spinner"></app-spinner>

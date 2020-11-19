@@ -214,4 +214,18 @@ export class AuthService {
     });
     return logged;
   }
+
+  registrarMateria(nombre: string, cuatrimestre: string, cupo: number, anio: number, profesor: string){
+    let fecha = Date.now();
+    let idMateria: string = nombre + "." + fecha;
+    return this.db.collection("materias").doc(idMateria).set({
+      id: idMateria,
+      nombre: nombre,
+      cuatrimestre: cuatrimestre,
+      cupo: cupo,
+      anio: anio,
+      profesor: profesor,
+      fecha: fecha
+    });
+  }
 }
