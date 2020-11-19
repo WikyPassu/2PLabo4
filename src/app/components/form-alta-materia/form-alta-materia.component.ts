@@ -16,12 +16,22 @@ export class FormAltaMateriaComponent implements OnInit {
       Validators.required,
       Validators.pattern("^[a-zA-Z]*$")
     ]],
-    clave: ['', [
+    cupo: ['', [
       Validators.required,
-      Validators.minLength(6)
-    ]]
+      Validators.min(1),
+      Validators.pattern("^[0-9]*$")
+    ]],
+    anio: ['', [
+      Validators.required,
+      Validators.min(2021),
+      Validators.pattern("^[0-9]*$")
+    ]],
+    profesor: ['', [
+      Validators.required,
+      Validators.pattern("^[a-zA-Z]*$")
+    ]],
   });
-  tipo: string = "admin";
+  cuatrimestre: string = "Primero";
 
   constructor(private fb: FormBuilder) { }
 
@@ -29,15 +39,17 @@ export class FormAltaMateriaComponent implements OnInit {
   }
 
   onChange(change: MatRadioChange){
-    this.tipo = change.value;
+    this.cuatrimestre = change.value;
   }
 
-  emitirNuevoRegistro(){
-    let usuario = {
-      email: this.usuario.controls["email"].value,
-      clave: this.usuario.controls["clave"].value,
-      tipo: this.tipo
+  emitirNuevaMateria(){
+    let materia = {
+      nombre: this.materia.controls["nombre"].value,
+      cupo: this.materia.controls["cupo"].value,
+      cuatrimestre: this.cuatrimestre,
+      anio: this.materia.controls["anio"].value,
+      profesor: this.materia.controls["profesor"].value,
     };
-    this.nuevoRegistro.emit(usuario);
+    this.nuevaMateria.emit(materia);
   }
 }
