@@ -1,4 +1,4 @@
-<div align="center">
+<!-- <div align="center">
     <br>
     <h1><b>Iniciar sesión</b></h1>
     <p>Inicia sesión para acceder a las opciones de la veterinaria.</p>
@@ -30,5 +30,10 @@
     <br><br>
     <button mat-raised-button color="primary" (click)="loginCliente()">cliente@cliente.com</button>
     <br><br>
-</div>
+</div> -->
+<app-form-login (nuevoLogin)="iniciarSesion($event)"></app-form-login>
+<br>
+<mat-card class="error" *ngIf="hayError">
+    <mat-label><strong>{{mensaje}}</strong></mat-label>
+</mat-card>
 <app-spinner *ngIf="spinner"></app-spinner>

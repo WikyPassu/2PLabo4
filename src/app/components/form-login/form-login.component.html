@@ -1,0 +1,33 @@
+<div align="center">
+    <br>
+    <h1><b>Iniciar sesión</b></h1>
+    <p>Inicia sesión para poder empezar a usar las funciones del sistema de alumnos.</p>
+    <form [formGroup]="usuario">
+        <mat-form-field class="example-full-width">
+            <mat-label>Correo</mat-label>
+            <input type="email"
+                matInput
+                placeholder="Correo electrónico"
+                formControlName="email">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Clave</mat-label>
+            <input type="password"
+                matInput
+                placeholder="Clave"
+                formControlName="clave">
+        </mat-form-field>
+    </form>
+    <br>
+    <button mat-raised-button color="primary" (click)="emitirLogin()" [disabled]="!usuario.valid">Iniciar sesión</button>
+    <br><br>
+    <mat-label>Acceso rápido:</mat-label>
+    <br><br>
+    <button mat-raised-button color="primary" (click)="loginUsuario(1)">admin@gmail.com</button>
+    <br><br>
+    <button mat-raised-button color="primary" (click)="loginUsuario(2)">alumno@gmail.com</button>
+    <br><br>
+    <button mat-raised-button color="primary" (click)="loginUsuario(3)">profesor@gmail.com</button>
+    <br>
+</div>

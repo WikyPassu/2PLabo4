@@ -35,6 +35,7 @@ import { InscripcionMateriaComponent } from './paginas/inscripcion-materia/inscr
 import { ListadoMateriasComponent } from './paginas/listado-materias/listado-materias.component';
 import { ListadoUsuariosComponent } from './paginas/listado-usuarios/listado-usuarios.component';
 import { FormRegistroComponent } from './components/form-registro/form-registro.component';
+import { FormLoginComponent } from './components/form-login/form-login.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { FormRegistroComponent } from './components/form-registro/form-registro.
     ListadoMateriasComponent,
     ListadoUsuariosComponent,
     FormRegistroComponent,
+    FormLoginComponent,
   ],
   imports: [
     FormsModule,
